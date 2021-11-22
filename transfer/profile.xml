@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <alps
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:noNamespaceSchemaLocation="https://alps-io.github.io/schemas/alps.xsd">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://alps-io.github.io/schemas/alps.xsd">
     <title>Money transfer</title>
 
     <!-- Ontology -->
@@ -22,8 +22,8 @@
     <!-- Choreography -->
     <descriptor id="doTransfer" type="idempotent" rt="#TransferUser" >
         <descriptor href="#moneyAmount" />
-        <descriptor href="#accountId" title="送信口座"/>
-        <descriptor href="#accountId" title="受信口座"/>
+        <descriptor id="senderId" href="#accountId" title="送信口座"/>
+        <descriptor id="receiverId" href="#accountId" title="受信口座"/>
     </descriptor>
 
 </alps>
