@@ -1,0 +1,15 @@
+digraph application_state_diagram {
+  graph [
+    labelloc="t";
+    fontname="Helvetica"
+    label="Money transfer";
+    URL="index.html" target="_parent"
+  ];
+  node [shape = box, style = "bold,filled" fillcolor="lightgray"];
+
+    TransferUser [margin=0.02, label=<<table cellspacing="0" cellpadding="5" border="0"><tr><td>TransferUser<br />(user)<br /></td></tr></table>>,shape=box URL="docs/semantic.TransferUser.html" target="_parent"]
+
+    TransferUser -> TransferUser [label = <doTransfer (idempotent)> URL="docs/idempotent.doTransfer.html" target="_parent" fontsize=13];
+
+
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alps
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="https://alps-io.github.io/schemas/alps.xsd">
+    <title>Money transfer</title>
+
+    <!-- Ontology -->
+    <descriptor id="name" />
+    <descriptor id="accountId" />
+    <descriptor id="moneyAmount"  />
+    <descriptor id="fooo"  />
+
+    <!-- Taxonomy -->
+    <descriptor id="user">
+        <descriptor href="#name"/>
+        <descriptor href="#accountId"/>
+    </descriptor>
+
+    <descriptor id="TransferUser">
+        <descriptor href="#user"/>
+        <descriptor href="#doTransfer" />
+    </descriptor>
+
+    <!-- Choreography -->
+    <descriptor id="doTransfer" type="idempotent" rt="#TransferUser" >
+        <descriptor href="#moneyAmount" />
+        <descriptor href="#accountId" title="送信者ID"/>
+        <descriptor href="#accountId" title="受信者ID"/>
+    </descriptor>
+
+</alps>
