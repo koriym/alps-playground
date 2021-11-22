@@ -8,14 +8,12 @@
     <descriptor id="name" />
     <descriptor id="accountId" />
     <descriptor id="moneyAmount"  />
-    <descriptor id="fooo"  />
 
     <!-- Taxonomy -->
     <descriptor id="user">
         <descriptor href="#name"/>
         <descriptor href="#accountId"/>
     </descriptor>
-
     <descriptor id="TransferUser">
         <descriptor href="#user"/>
         <descriptor href="#doTransfer" />
@@ -24,8 +22,8 @@
     <!-- Choreography -->
     <descriptor id="doTransfer" type="idempotent" rt="#TransferUser" >
         <descriptor href="#moneyAmount" />
-        <descriptor href="#accountId" title="送信者ID"/>
-        <descriptor href="#accountId" title="受信者ID"/>
+        <descriptor href="#accountId" title="送信口座"/>
+        <descriptor href="#accountId" title="受信口座"/>
     </descriptor>
 
 </alps>
